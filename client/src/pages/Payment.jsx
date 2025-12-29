@@ -9,7 +9,7 @@ const Payment = () => {
   const handlePayment = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/payment/order",
+        "https://salon-booking-o7wg.onrender.com/api/payment/order",
         {
           bookingId,
           amount: totalAmount,
@@ -24,7 +24,7 @@ const Payment = () => {
         description: "Payment for salon booking",
         order_id: data.order.id,
         handler: async function (response) {
-          await axios.post("http://localhost:5000/api/payment/verify", {
+          await axios.post("https://salon-booking-o7wg.onrender.com/api/payment/verify", {
             bookingId,
             ...response,
           });

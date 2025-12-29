@@ -53,7 +53,7 @@ const Booking = () => {
       if (!bookingDate || !salon?._id) return;
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/bookings/${salon._id}?date=${bookingDate}`
+          `https://salon-booking-o7wg.onrender.com/api/bookings/${salon._id}?date=${bookingDate}`
         );
 
         const slots = [];
@@ -172,7 +172,7 @@ const Booking = () => {
       };
 
       const res = await axios.post(
-        "http://localhost:5000/api/bookings",
+        "https://salon-booking-o7wg.onrender.com/api/bookings",
         bookingData
       );
 
@@ -210,7 +210,7 @@ const Booking = () => {
                 .map((photo, idx) => (
                   <div key={idx}>
                     <img
-                      src={`http://localhost:5000/uploads/${photo}`}
+                      src={`https://salon-booking-o7wg.onrender.com/uploads/${photo}`}
                       alt={`Salon Photo ${idx + 1}`}
                       className="w-full h-72 object-cover rounded-lg"
                     />
