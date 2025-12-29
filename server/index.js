@@ -14,10 +14,13 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    // Yahan apni Vercel URL aur localhost dono ko allow karein
+    origin: ["https://salon-booking-beige.vercel.app", "http://localhost:5173"], 
     credentials: true,
   })
 );
+//ya
+//app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
