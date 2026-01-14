@@ -13,7 +13,8 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: "https://salon-booking-git-main-divyanshu-singhs-projects-28ae076b.vercel.app"
+  origin: /vercel\.app$/,
+  credentials: true
 }));
 
 app.options("*", cors());
