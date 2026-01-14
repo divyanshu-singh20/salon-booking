@@ -12,18 +12,9 @@ const paymentRouter = require("./router/paymentRouter");
 dotenv.config();
 const app = express();
 
-app.use(
-  cors({
-    origin: [
-      "https://salon-booking-git-main-divyanshu-singhs-projects-28ae076b.vercel.app",
-      "https://salon-booking-beige.vercel.app",
-      "http://localhost:5173"
-    ], 
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: "https://salon-booking-git-main-divyanshu-singhs-projects-28ae076b.vercel.app"
+}));
 
 app.options("*", cors());
 
